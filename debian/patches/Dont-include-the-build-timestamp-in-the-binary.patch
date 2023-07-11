@@ -1,0 +1,33 @@
+From: Guilhem Moulin <guilhem@debian.org>
+Date: Mon, 5 Oct 2015 18:00:13 +0200
+Subject: Don't include the build timestamp in the binary
+
+To make the build reproducible.
+
+Forwarded: not-needed
+---
+ main.c | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+
+diff --git a/main.c b/main.c
+index 84638ac..61eda30 100644
+--- a/main.c
++++ b/main.c
+@@ -64,7 +64,6 @@ typedef enum {
+ } output_t;
+ 
+ char version[] = "netmask, version "VERSION;
+-char vversion[] = __DATE__" "__TIME__;
+ char usage[] = "Try `%s --help' for more information.\n";
+ char *progname = NULL;
+ 
+@@ -309,8 +308,7 @@ int main(int argc, char *argv[]) {
+    default: lose = 1; break;
+   }
+   if(v) {
+-    if(v == 1) fprintf(stderr, "%s\n", version);
+-    else fprintf(stderr, "%s, %s\n", version, vversion);
++    fprintf(stderr, "%s\n", version);
+     if(!h) exit(0);
+   }
+   if(h) {

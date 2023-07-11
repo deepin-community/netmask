@@ -1,0 +1,2 @@
+#! /bin/sh
+exec ${AUTORECONF-autoreconf} --install --symlink --force

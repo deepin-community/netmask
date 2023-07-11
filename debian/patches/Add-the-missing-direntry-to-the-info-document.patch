@@ -1,0 +1,23 @@
+From: Guilhem Moulin <guilhem@debian.org>
+Date: Sun, 20 Sep 2015 21:27:14 +0200
+Subject: Add missing '@direntry' to the info document
+
+---
+ netmask.texi | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/netmask.texi b/netmask.texi
+index f4c7e7b..54cc425 100644
+--- a/netmask.texi
++++ b/netmask.texi
+@@ -7,6 +7,10 @@
+ @c %**end of header
+ 
+ @dircategory General Commands
++@direntry
++* netmask: (netmask).   A netmask generation and conversion program.
++@end direntry
++
+ @include version.texi
+ %@set EDITION 2.02
+ %@set VERSION 2.2
